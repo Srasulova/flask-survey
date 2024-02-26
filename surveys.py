@@ -52,3 +52,15 @@ surveys = {
     "satisfaction": satisfaction_survey,
     "personality": personality_quiz,
 }
+
+print(satisfaction_survey.title)
+print('**************')
+print(satisfaction_survey.instructions)
+print('**************')
+print(satisfaction_survey.questions[1].question)
+print('**************')
+print(satisfaction_survey.questions[1].choices)
+print('**************')
+print(satisfaction_survey.questions[1].allow_text)
+
+
