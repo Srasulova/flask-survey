@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %}
+<h1>You have answered to questions with these answers:</h1>
+<ul></ul>
+{% for response in responses %}
+<li>{{response}}</li>
+{% endfor %} {% endblock %}
