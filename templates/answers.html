@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<h1>You have answered to questions with these answers:</h1>
-<ul></ul>
+<h1 style="padding-left: 20px">
+  You have answered to questions with these answers:
+</h1>
+<ul style="padding-left: 20px"></ul>
 {% for response in responses %}
-<li>{{response}}</li>
+<li style="padding-left: 20px">{{response}}</li>
 {% endfor %} {% endblock %}

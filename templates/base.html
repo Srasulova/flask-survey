@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey</title>
   </head>
-  <body>
+  <body style="margin: 0; padding: 0">
     {% for msg in get_flashed_messages() %}
-    <p>{{ msg }}</p>
+    <p
+      style="
+        background-color: rgba(255, 0, 0, 0.5);
+        margin: 0;
+        padding: 20px;
+        color: white;
+        font-weight: bold;
+      "
+    >
+      {{ msg }}
+    </p>
     {% endfor %} {% block content %} {% endblock %}
   </body>
 </html>
