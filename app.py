@@ -22,15 +22,34 @@ def start_survey():
     return redirect('/questions/0')
 
 
+@app.route('/answer', methods=["POST"])
+def show_answers():
+    # get the response from the form
+    choice = request.form['answer']
+
+    # add the response to the list
+    responses.append(choice)
+
+    if(len(responses) == len(survey.questions)):
+        return redirect("/answers")
+    else:
+        return redirect(f"questions/{len(responses)}")
+
 @app.route('/questions/<int:qID>')
 def show_question(qID):
     question = survey.questions[qID]
+    if responses is None:
+        return redirect("/")
+    
+    if(len(responses) == len(survey.questions)):
+        return redirect("/answers")
+    
+    if(len(responses) != qID):
+        flash(f"Invalid question ID: {qID}")
+        return redirect(f"/questions/{len(responses)}")
+    
     return render_template("question.html", question = question)
 
-@app.route('/answer', methods=["POST"])
-def show_answers():
-    choice = request.form['answer']
-    responses.append(choice)
-    print(responses)
-    return render_template("/answers.html", responses = responses)
-
+@app.route('/answers')
+def show_answers_page():
+    return render_template("answers.html", responses = responses)
