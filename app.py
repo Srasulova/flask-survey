@@ -23,7 +23,7 @@ def start_survey():
 
 
 @app.route('/answer', methods=["POST"])
-def show_answers():
+def show_next_question():
     # get the response from the form
     choice = request.form['answer']
 
