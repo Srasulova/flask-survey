@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1 style="padding-left: 20px">{{title}}</h1>
-<h2 style="padding-left: 20px">{{instructions}}</h2>
+<h1 style="padding-left: 20px">{{survey.title}}</h1>
+<h2 style="padding-left: 20px">{{survey.instructions}}</h2>
 
 <form style="padding-left: 20px" action="/start" method="post">
   <button>Start</button>
